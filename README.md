@@ -31,6 +31,12 @@ docker exec -it mycluster-master bash
 spark-shell --master yarn --deploy-mode client
 ```
 
+## Run a sample PySpark app on the cluster
+```
+docker exec -it mycluster-master spark-submit \
+    --master yarn \
+    /examples/pyspark-job.py
+```
 ### Run Java Spark applications on cluster
 
 - Spark Submit: 
