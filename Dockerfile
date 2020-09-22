@@ -23,6 +23,13 @@ RUN mv /spark-2.4.1-bin-hadoop2.7 /usr/local/spark
 RUN rm /spark.tar.gz
 
 
+RUN apt update && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa -y && \
+    apt update
+RUN apt install python3.7
+RUN cp /usr/bin/python3.7 /usr/bin/python
+
 ENV HADOOP_HOME=/usr/local/hadoop
 ENV SPARK_HOME=/usr/local/spark
 ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin:$SPARK_HOME:sbin
