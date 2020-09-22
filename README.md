@@ -5,7 +5,7 @@ This is a Docker setup that allows to deploy multi-node Hadoop cluster with Spar
 ## Build image
 
 ```bash
-docker build -t amithkoujalgi/spark-with-hadoop-yarn-cluster .
+./build.sh
 ```
 
 ## Run  
