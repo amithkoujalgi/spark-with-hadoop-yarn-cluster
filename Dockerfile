@@ -26,8 +26,9 @@ RUN rm /spark.tar.gz
 RUN apt update && \
     apt install -y software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa -y && \
-    apt update
-RUN apt install python3.7
+    apt update && \
+    apt install -y python3.7
+
 RUN cp /usr/bin/python3.7 /usr/bin/python
 
 ENV HADOOP_HOME=/usr/local/hadoop
