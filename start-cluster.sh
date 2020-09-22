@@ -6,6 +6,7 @@ HOST_PREFIX="mycluster"
 NETWORK_NAME=$HOST_PREFIX
 
 # CLEANUP OLD CONTAINERS
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=$IMG_NAME --format="{{.ID}}"))
 docker container prune -f
 
 N=${1:-2}
