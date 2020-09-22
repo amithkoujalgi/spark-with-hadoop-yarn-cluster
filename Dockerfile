@@ -29,6 +29,9 @@ RUN apt update && \
     apt update && \
     apt install -y python3.7
 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y krb5-user nano
+
 RUN cp /usr/bin/python3.7 /usr/bin/python
 
 ENV HADOOP_HOME=/usr/local/hadoop

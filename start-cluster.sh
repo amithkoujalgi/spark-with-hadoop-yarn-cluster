@@ -23,7 +23,14 @@ while [ $i -le $N ]
 do
 	HADOOP_SLAVE="$HOST_PREFIX"-slave-$i
 
-	docker run -v ~/:/app --name $HADOOP_SLAVE -h $HADOOP_SLAVE --net=$NETWORK_NAME -itd "$IMG_NAME"
+	docker run \
+		-v ~/:/app \
+		--add-host quickstart.cloudera:192.168.48.217 \
+		--name $HADOOP_SLAVE \
+		-h $HADOOP_SLAVE \
+		--net=$NETWORK_NAME \
+		-itd "$IMG_NAME"
+		
 	i=$(( $i + 1 ))
 done
 
@@ -31,7 +38,9 @@ done
 
 HADOOP_MASTER="$HOST_PREFIX"-master
 
-docker run -v ~/:/app --name $HADOOP_MASTER \
+docker run -v ~/:/app \
+		--add-host quickstart.cloudera:192.168.48.217 \
+		--name $HADOOP_MASTER \
 		-h $HADOOP_MASTER \
 		--net=$NETWORK_NAME \
 		-p 8088:8088 \

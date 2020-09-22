@@ -2,7 +2,7 @@
 
 This is a Docker setup that allows to deploy multi-node Hadoop cluster with Spark 2.4.1 on YARN
 
-# Start cluster:
+## Start cluster
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/start-cluster.sh)"
@@ -15,13 +15,15 @@ Once the services are up, you can access the following:
 - HDFS Web UI: http://localhost:50070
 
 ## Run a sample PySpark app on the cluster
+
 ```
 docker exec -it mycluster-master spark-submit \
     --master yarn \
     /examples/pyspark-job.py
 ```
 
-# Stop cluster:
+## Stop cluster
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/stop-cluster.sh)"
 ```
