@@ -10,7 +10,13 @@ This is a Docker setup that allows to deploy multi-node Hadoop cluster with Spar
 
 ## Run  
 - Run `./start-cluster.sh`
-- Access to master `docker exec -it mycluster-master bash`
+
+
+## Access Hadoop master container 
+
+```bash
+docker exec -it mycluster-master bash
+```
 
 ### Run Spark applications on cluster
 - Spark-shell: 
