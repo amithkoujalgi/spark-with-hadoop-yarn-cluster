@@ -42,9 +42,3 @@ docker run --name $HADOOP_MASTER \
 
 # START MULTI-NODES CLUSTER
 docker exec -it $HADOOP_MASTER "/usr/local/hadoop/spark-services.sh"
-
-
-
-
-
-

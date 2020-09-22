@@ -47,8 +47,9 @@ RUN mv /tmp/ssh_config $HOME/.ssh/config \
 
 ADD scripts/spark-services.sh $HADOOP_HOME/spark-services.sh
 
-RUN chmod 744 -R $HADOOP_HOME
+COPY examples/ /examples/
 
+RUN chmod 744 -R $HADOOP_HOME
 
 RUN $HADOOP_HOME/bin/hdfs namenode -format
 
