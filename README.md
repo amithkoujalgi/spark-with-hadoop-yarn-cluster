@@ -62,5 +62,7 @@ spark-submit \
 ```
 
 ## Stop 
-- `docker stop $(docker ps -a -q)`
-- `docker container prune`
+
+```bash
+./stop-cluster.sh
+```
