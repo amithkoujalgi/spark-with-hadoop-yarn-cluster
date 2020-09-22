@@ -11,6 +11,12 @@ This is a Docker setup that allows to deploy multi-node Hadoop cluster with Spar
 ## Run  
 - Run `./start-cluster.sh`
 
+Once the services are up, you can access the following:
+
+- Hadoop cluster Web UI: http://localhost:8088
+- Spark Web UI: http://localhost:8080
+- HDFS Web UI: http://localhost:50070
+  
 
 ## Access Hadoop master container 
 
@@ -55,12 +61,6 @@ spark-submit \
     $SPARK_HOME/examples/jars/spark-examples_2.11-2.4.1.jar
 ```
 
-Once the services are up, you can access the following:
-
-- Hadoop cluster Web UI: http://localhost:8088
-- Spark Web UI: http://localhost:8080
-- HDFS Web UI: http://localhost:50070
-  
 ## Stop 
 - `docker stop $(docker ps -a -q)`
 - `docker container prune`
