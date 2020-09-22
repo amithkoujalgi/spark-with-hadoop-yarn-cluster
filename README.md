@@ -12,16 +12,41 @@ docker build -t amithkoujalgi/spark-with-hadoop-yarn-cluster .
 - Run `./start-cluster.sh`
 - Access to master `docker exec -it mycluster-master bash`
 
-### Run Java Spark applications on cluster
+### Run Spark applications on cluster
 - Spark-shell: 
 
 ```bash
 spark-shell --master yarn --deploy-mode client
 ```
 
-- spark: 
+### Run Java Spark applications on cluster
+
+- Spark Submit: 
+
+Client Mode:
+
 ```bash
-spark-submit --master yarn --deploy-mode client or cluster --num-executors 2 --executor-memory 4G --executor-cores 4 --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.11-2.4.1.jar
+spark-submit \
+    --master yarn \
+    --deploy-mode client \
+    --num-executors 2 \
+    --executor-memory 4G \
+    --executor-cores 4 \
+    --class org.apache.spark.examples.SparkPi \
+    $SPARK_HOME/examples/jars/spark-examples_2.11-2.4.1.jar
+```
+
+Cluster Mode:
+
+```bash
+spark-submit \
+    --master yarn \
+    --deploy-mode cluster \
+    --num-executors 2 \
+    --executor-memory 4G \
+    --executor-cores 4 \
+    --class org.apache.spark.examples.SparkPi \
+    $SPARK_HOME/examples/jars/spark-examples_2.11-2.4.1.jar
 ```
 
 - Access to Hadoop cluster Web UI: http://localhost:8088
