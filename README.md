@@ -5,7 +5,7 @@ This is a Docker setup that allows to deploy multi-node Hadoop cluster with Spar
 # Start cluster:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/start-cluster.sh"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/start-cluster.sh)"
 ```
 
 Once the services are up, you can access the following:
@@ -23,7 +23,7 @@ docker exec -it mycluster-master spark-submit \
 
 # Stop cluster:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/stop-cluster.sh"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/amithkoujalgi/spark-with-hadoop-yarn-cluster/master/stop-cluster.sh)"
 ```
 
 # DEVELOPMENT
