@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # VARIABLES
-IMG_NAME="pierrekieffer/spark-hadoop-cluster"
+IMG_NAME="amithkoujalgi/spark-with-hadoop-yarn-cluster"
 HOST_PREFIX="mycluster"
 NETWORK_NAME=$HOST_PREFIX
 
@@ -12,6 +12,7 @@ if [ -z "$NET_QUERY" ]; then
 fi
 
 # START HADOOP SLAVES 
+
 i=1
 while [ $i -le $N ]
 do
