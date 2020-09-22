@@ -17,6 +17,7 @@ i=1
 while [ $i -le $N ]
 do
 	HADOOP_SLAVE="$HOST_PREFIX"-slave-$i
+	
 	docker run --name $HADOOP_SLAVE -h $HADOOP_SLAVE --net=$NETWORK_NAME -itd "$IMG_NAME"
 	i=$(( $i + 1 ))
 done
@@ -24,6 +25,7 @@ done
 # START HADOOP MASTER
 
 HADOOP_MASTER="$HOST_PREFIX"-master
+
 docker run --name $HADOOP_MASTER \
 		-h $HADOOP_MASTER \
 		--net=$NETWORK_NAME \
